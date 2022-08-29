@@ -1,8 +1,34 @@
-
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+<footer class="bg-light border-top py-3">
+    <div class="container">
+        <div class="row">
+            <div class="footer-menu">
+                <?php
+                wp_nav_menu(array(
+                    'menu' => 'footer',
+                    'link_class' => 'link-secondary text-decoration-none'
+                ));
+                ?>
+            </div>
+            <div class="social-icons">
+                <ul>
+                    <li><a href="#" class="text-decoration-none" aria-label="Facebook" target="_blank" rel="noreferrer" title="حورية على Facebook"><span class="fa-brands fa-facebook"></span></a></li>
+                    <li><a href="#" class="text-decoration-none" aria-label="Twitter" target="_blank" rel="noreferrer" title="حورية على twitter"><span class="fa-brands fa-twitter"></span></a></li>
+                    <li><a href="#" class="text-decoration-none" aria-label="Instagram" target="_blank" rel="noreferrer" title="حورية على instagram"><span class="fa-brands fa-instagram"></span></a></li>
+                    <li><a href="#" class="text-decoration-none" aria-label="Youtube" target="_blank" rel="noreferrer" title="حورية على Youtube"><span class="fa-brands fa-youtube"></span></a></li>
+                </ul>
+            </div>
+            <div class="text-center">
+                <p>جميع الحقوق محفوظة ©</p>
+            </div>
+        </div>
+        <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
+            <img src="<?php echo esc_url(get_template_directory_uri() . "/assets/img/up.svg"); ?>" alt="اعلى الصفحة" title="اعلى الصفحة">
+        </button>
+    </div>
+</footer>
 </body>
+
 </html>
-<?php 
+<?php
 
 wp_footer();

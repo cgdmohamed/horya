@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The main template file
  *
@@ -14,28 +15,31 @@
 
 <?php get_header(); ?>
 
-    <main>
-        <?php if ( is_front_page()){
-            get_template_part( 'template-parts/content', 'home' ); 
-        } 
-        if ( is_home() ){
-            echo 'hi home';
-        }
-        ?>
-		<?php if ( have_posts() ) : ?>
+<main>
+	<?php if (is_front_page()) {
+		get_template_part('template-parts/content', 'home');
+	}
+	?>
+	<?php if (have_posts()) : ?>
+		<div class="container">
+				<div class="row">
+		<?php while (have_posts()) : the_post(); ?>
 
-					<?php while ( have_posts() ) : the_post(); ?>
+					<?php
+					if (is_home()) {
+						get_template_part('template-parts/content', 'archive');
+					}
+					?>
 
-							<?php get_template_part( 'template-parts/content', 'post' ); ?>
+		<?php endwhile; ?>
+		</div>
+			</div>
+		<?php the_posts_pagination(); ?>
 
-					<?php endwhile; ?>
-
-					<?php the_posts_pagination(); ?>
-
-		<?php else : ?>
-			<?php get_template_part( 'template-parts/content', 'none' ); ?>
-		<?php endif; ?>
-	</main><!-- #main -->
+	<?php else : ?>
+		<?php get_template_part('template-parts/content', 'none'); ?>
+	<?php endif; ?>
+</main><!-- #main -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

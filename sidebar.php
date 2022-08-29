@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The sidebar containing the main widget area
  *
@@ -6,19 +7,16 @@
  *
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+if (!is_active_sidebar('sidebar-1')) {
 	return;
 }
 ?>
 
-<aside id="secondary" class="widget-area hero is-light" role="complementary">
-	<div class="hero-body">
-		<div class="container">
-			<hr>
-			<div class="spacer is-large"></div>
-			<div class="columns is-multiline">
-				<?php dynamic_sidebar( 'sidebar-1' ); ?>
+<aside id="secondary" class="widget-area col" role="complementary">
+		<div class="row">
+			<div class="col">
+				<?php dynamic_sidebar('sidebar-1'); ?>
+				<?php get_sidebar( 'sidebar-1' ); ?>
 			</div>
 		</div><!-- .container -->
-	</div>
 </aside><!-- #secondary -->
