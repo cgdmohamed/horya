@@ -16,11 +16,13 @@
 get_header(); ?>
 
 <div id="primary" class="content-area">
-    <main id="main" class="site-main" role="main">
-        <?php while (have_posts()) : the_post(); ?>
-            <?php get_template_part('template-parts/content'); ?>
-            <!-- the comments callback -->
-        <?php endwhile; ?>
+    <main id="main" class="site-main container" role="main">
+        <div class="row pb-5 pt-1">
+            <?php while (have_posts()) : the_post(); ?>
+                <?php get_template_part('template-parts/content'); ?>
+                <!-- the comments callback -->
+            <?php endwhile; ?>
+        </div>
     </main><!-- #main -->
 </div><!-- #primary -->
 

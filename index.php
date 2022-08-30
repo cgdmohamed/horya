@@ -21,25 +21,58 @@
 	}
 	?>
 	<?php if (have_posts()) : ?>
-		<div class="container">
-				<div class="row">
-		<?php while (have_posts()) : the_post(); ?>
 
-					<?php
-					if (is_home()) {
-						get_template_part('template-parts/content', 'archive');
-					}
-					?>
+		<div class="container my-3">
+			<div class="row">
+				<div class="col-md-8">
+					<div class="border rounded p-3">
 
-		<?php endwhile; ?>
-		</div>
-			</div>
-		<?php the_posts_pagination(); ?>
+					<strong>احدث المواضيع</strong>
+					<div class="container py-3">
+						<div class="row row-cols-3 row-cols-sm-2 row-cols-md-3 g-3">
+							<?php while (have_posts()) : the_post(); ?>
+								<?php get_template_part('template-parts/content', 'grid'); ?>
+							<?php endwhile; ?>
+						</div>
+						<?php the_posts_pagination(); ?>
+					</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="border rounded p-3">
+						<aside class="container py-3">
+							<strong>الزوار قد شاهدوا ايضاً</strong>
+							<hr />
+							<div class="row row-cols-2 row-cols-sm-2 row-cols-md-2 g-3">
+								<?php
+								echo do_shortcode('[random-posts]');
+								?>
+							</div> <!-- random -->
+							<div class="bg-secondary rounded border text-center text-light p-4 my-3">
+								Google Ads Placeholder
+							</div>
+							<strong class="pt-3">
+								اهم التصنيفات
+							</strong>
+							<hr />
+							<div class="row g-3 archive-cats fw-bold">
+								<?php wp_list_categories(
+									array(
+										'title_li' => '',
+										'style'    => 'none',
+									)
 
-	<?php else : ?>
-		<?php get_template_part('template-parts/content', 'none'); ?>
-	<?php endif; ?>
+								); ?>
+							</div> <!-- related posts -->
+						</aside>
+					</div>
+
+
+				</div>
+			<?php else : ?>
+				<?php get_template_part('template-parts/content', 'none'); ?>
+			<?php endif; ?>
 </main><!-- #main -->
 
-<?php get_sidebar(); ?>
+
 <?php get_footer(); ?>

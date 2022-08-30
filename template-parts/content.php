@@ -64,4 +64,3 @@ get_header(); ?>
 		</footer><!-- .entry-footer -->
 	</div>
 </article><!-- #post-## -->
-<?php get_footer(); ?>
