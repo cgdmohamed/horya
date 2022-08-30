@@ -4,13 +4,6 @@
  *
  * @package WP-Bootstrap-Navwalker
  *
- * @wordpress-plugin
- * Plugin Name: WP Bootstrap Navwalker
- * Plugin URI:  https://github.com/wp-bootstrap/wp-bootstrap-navwalker
- * Description: A custom WordPress nav walker class to implement the Bootstrap 4 navigation style in a custom theme using the WordPress built in menu manager.
- * Author: Edward McIntyre - @twittem, WP Bootstrap, William Patton - @pattonwebz
- * Version: 4.3.0
- * Author URI: https://github.com/wp-bootstrap
  * GitHub Plugin URI: https://github.com/wp-bootstrap/wp-bootstrap-navwalker
  * GitHub Branch: master
  * License: GPL-3.0+
@@ -363,7 +356,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 				if ( $menu_class ) {
 					$fallback_output .= ' class="' . esc_attr( $menu_class ) . '"'; }
 				$fallback_output .= '>';
-				$fallback_output .= '<li class="nav-item"><a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" class="nav-link" title="' . esc_attr__( 'Add a menu', 'wp-bootstrap-navwalker' ) . '">' . esc_html__( 'Add a menu', 'wp-bootstrap-navwalker' ) . '</a></li>';
+				$fallback_output .= '<li class="nav-item"><a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" class="nav-link" title="' . esc_attr__( 'Add a menu', 'horya' ) . '">' . esc_html__( 'Add a menu', 'horya' ) . '</a></li>';
 				$fallback_output .= '</ul>';
 				if ( $container ) {
 					$fallback_output .= '</' . esc_attr( $container ) . '>';

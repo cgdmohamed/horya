@@ -5,6 +5,7 @@
                 <?php
                 wp_nav_menu(array(
                     'menu' => 'footer',
+                    'theme_location' => 'footer',
                     'link_class' => 'link-secondary text-decoration-none'
                 ));
                 ?>

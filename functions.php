@@ -13,7 +13,7 @@ require get_template_directory() . '/inc/theme-assets.php';
  /**
   * Theme Requirments
   */
+require get_template_directory() . '/inc/theme-config.php';
 require get_template_directory() . '/inc/theme-helpers.php';
 require get_template_directory() . '/inc/theme-dynamics.php';
-require get_template_directory() . '/inc/theme-widgets.php';
 require get_template_directory() . '/inc/template-tags.php';

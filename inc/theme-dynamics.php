@@ -14,6 +14,8 @@ add_theme_support('custom-logo', array(
 	'width'  => 211,
 ));
 add_theme_support('post-thumbnails');
+add_theme_support( 'automatic-feed-links' );
+add_theme_support( "responsive-embeds" );
 $themeargs = array(
 	'default-image' => get_template_directory_uri() . '/assets/img/default.png',
 	'default-position-x' => 'center',

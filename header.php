@@ -24,25 +24,16 @@ $image = wp_get_attachment_image_src($custom_logo_id, 'full');
     <?php wp_head(); ?>
 
     <!-- google adsense tag -->
-    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
-    <script>
-      window.googletag = window.googletag || {cmd: []};
-      googletag.cmd.push(function() {
-        googletag
-            .defineSlot(
-                '/6355419/Travel/Europe/France/Paris', [300, 250], 'banner-ad')
-            .addService(googletag.pubads());
-        googletag.enableServices();
-      });
-    </script>
+
 </head>
 
 <body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 
     <header id="header">
         <nav class="navbar navbar-expand-lg  shadow-5-strong bg-light justify-content-between" role="navigation">
             <div class="container-fluid ">
-                <a class="navbar-brand" href="<?php echo esc_url(site_url()); ?> ">
+                <a class="navbar-brand" href="<?php echo esc_url(home_url()); ?> ">
             <?php 
             $custom_logo_id = get_theme_mod( 'custom_logo' );
             $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );

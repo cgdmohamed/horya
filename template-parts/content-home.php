@@ -8,14 +8,12 @@
   </div>
 </section>
 
-<section class="container">
-<div id="banner-ad" style="width: 300px; height: 250px;">
-      <script>
-        googletag.cmd.push(function() {
-          googletag.display('banner-ad');
-        });
-      </script>
+<section>
+  <div class="container">
+    <div class="bg-secondary rounded border text-center text-light p-5 my-3">
+      Google Ads Placeholder
     </div>
+  </div>
 </section>
 
 <section>
@@ -105,25 +103,25 @@
                   <?php } ?>
                   <h5 class="card-title"><a href="<?php echo get_category_link($category->term_id) ?>" class="card-link text-decoration-none fw-bold"><?php echo $category->name ?></a></h5>
                 </div>
-                  <ul class="list-group list-group-flush">
-                    <?php
-                    $term_id = get_queried_object()->term_id;
-                    $term = get_term($term_id, 'category');
+                <ul class="list-group list-group-flush">
+                  <?php
+                  $term_id = get_queried_object()->term_id;
+                  $term = get_term($term_id, 'category');
 
-                    $args = array(
-                      'orderby' => 'name',
-                      'order' => 'ASC',
-                      'hide_empty' => false,
-                      'child_of' => $category->term_id,
-                      'parent' => $category->term_id
-                    );
+                  $args = array(
+                    'orderby' => 'name',
+                    'order' => 'ASC',
+                    'hide_empty' => false,
+                    'child_of' => $category->term_id,
+                    'parent' => $category->term_id
+                  );
 
-                    $sub_terms = get_terms('category', $args);
+                  $sub_terms = get_terms('category', $args);
 
-                    foreach ($sub_terms as $term) { ?>
-                      <li class="list-group-item"> <a href="<?php echo get_term_link($term); ?>" class="text-decoration-none text-dark"><?php echo $term->name; ?></a></li>
-                    <?php } ?>
-                  </ul>
+                  foreach ($sub_terms as $term) { ?>
+                    <li class="list-group-item"> <a href="<?php echo get_term_link($term); ?>" class="text-decoration-none text-dark"><?php echo $term->name; ?></a></li>
+                  <?php } ?>
+                </ul>
               </div>
             </div>
           </div>
