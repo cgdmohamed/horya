@@ -14,8 +14,12 @@
     <div class="container">
         <div class="d-flex">
             <div class="row">
-                <?php the_post_thumbnail('img-thumb', array('class' => 'img-fluid col-4')); ?>
-                <div class="col-8">
+                <div class="col-4 col-md-4">
+                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                        <?php the_post_thumbnail('img-thumb', array('class' => 'img-fluid rounded')); ?>
+                    </a>
+                </div>
+                <div class="col-8 col-md-8">
                     <?php the_excerpt(); ?>
                 </div>
             </div>

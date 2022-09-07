@@ -32,11 +32,24 @@ get_header(); ?>
 					<h1><?php the_title(); ?></h1>
 					<div class="py-2">
 						اخر تحديث
-					<?php $post_date = get_the_date( 'j F Y' ); echo $post_date; ?>
-					<?php echo get_the_time(); ?>
+						<?php $post_date = get_the_date('j F Y');
+						echo $post_date; ?>
+						<?php echo get_the_time(); ?>
 					</div>
 					<?php the_post_thumbnail('large', array('class' => 'img-fluid')); ?>
-					<?php the_content(); ?>
+					<div class="row py-2">
+						<div class="col-md-2 table-of-contents d-none d-sm-block">
+							<span class="toc-headline py-2 border-bottom border-2">ذات صلة</span>
+							<div>
+								<?php echo do_shortcode('[related_titles]'); ?>
+							</div>
+						</div>
+						<div class="col-md-10">
+							<?php the_content(); ?>
+						</div>
+					</div>
+
+
 					<section>
 						<div>
 							<?php
@@ -58,6 +71,16 @@ get_header(); ?>
 					</div><!-- tools -->
 				</div>
 			</main><!-- #main -->
+			<div class="container">
+				<div class="py-3">
+					<strong>مواضيع ذات صلة بـ: <?php the_title(); ?> </strong>
+				</div>
+				<div class="row row-cols-3 row-cols-sm-2 row-cols-md-3 g-3 py-3">
+					<?php
+					echo do_shortcode('[random-posts]');
+					?>
+				</div>
+			</div>
 		</div>
 		<div class="col-md-4">
 			<div class="border rounded p-3">

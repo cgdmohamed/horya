@@ -39,7 +39,7 @@ $image = wp_get_attachment_image_src($custom_logo_id, 'full');
             $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
              
             if ( has_custom_logo() ) {
-                echo '<img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '" height="50px" />';
+                echo '<img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '"width="130px" height="50px" />';
             } else {
                 echo '<h1>' . get_bloginfo('name') . '</h1>';
             }

@@ -28,9 +28,9 @@
       $args = array(
         'post_type'              => array('post'),
         'post_status'            => array('publish'),
-        'nopaging'               => true,
-        'post_count'         => '5',
-        'posts_per_page' => '5'
+        //'nopaging'               => true,
+        //'post_count'         => '4',
+        'posts_per_page' => '6'
       );
 
       // The Query
@@ -46,9 +46,11 @@
           $cat_link = get_category_link($cat_id);
 
           echo '<div class="col border-0"><div class="card border-0">';
+          echo "<a href='" . get_the_permalink() . "'>";
           the_post_thumbnail('large', array(
             'class' => 'img-fluid rounded'
           ));
+          echo "</a>";
 
           echo "<a class='p-3 fw-bold fs-3 text-decoration-none text-dark' href='" . get_the_permalink() . "'><h3 class='fs-6'>" . get_the_title() . "</h3></a>";
       ?>
@@ -97,9 +99,9 @@
               <div class="card-body">
                 <div class="d-flex align-items-center">
                   <?php if (get_term_icon_url($category->term_id)) { ?>
-                    <img src="<?php echo get_term_icon_url($category->term_id); ?>" alt="<?php echo $category->name ?>" title="<?php echo $category->name ?>" />
+                    <img src="<?php echo get_term_icon_url($category->term_id); ?>" alt="<?php echo $category->name ?>" width="150px" height="150px" title="<?php echo $category->name ?>" />
                   <?php } else { ?>
-                    <img src="<?php echo esc_url(get_template_directory_uri() . "/assets/img/category.svg"); ?>" alt="<?php echo $category->name ?>" title="<?php echo $category->name ?>" />
+                    <img src="<?php echo esc_url(get_template_directory_uri() . "/assets/img/category.svg"); ?>" width="150px" height="150px" alt="<?php echo $category->name ?>" title="<?php echo $category->name ?>" />
                   <?php } ?>
                   <h5 class="card-title"><a href="<?php echo get_category_link($category->term_id) ?>" class="card-link text-decoration-none fw-bold"><?php echo $category->name ?></a></h5>
                 </div>

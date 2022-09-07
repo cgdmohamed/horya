@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 /**
  * Horya Theme functions
  * Author: Mohamed Mostafa
@@ -10,9 +11,9 @@
  */
 require get_template_directory() . '/inc/theme-assets.php';
 
- /**
-  * Theme Requirments
-  */
+/**
+ * Theme Requirments
+ */
 require get_template_directory() . '/inc/theme-config.php';
 require get_template_directory() . '/inc/theme-helpers.php';
 require get_template_directory() . '/inc/theme-dynamics.php';
